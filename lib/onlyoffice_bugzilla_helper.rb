@@ -6,11 +6,11 @@ require 'onlyoffice_bugzilla_helper/version'
 module OnlyofficeBugzillaHelper
   # Class to check bugzilla via http
   class BugzillaHelper
-    attr_accessor :bugzilla_url
+    attr_reader :url
 
     def initialize(bugzilla_url: 'bugzilla.onlyoffice.com',
                    api_key: BugzillaHelper.read_token)
-      @bugzilla_url = bugzilla_url
+      @url = bugzilla_url
       @key = api_key
     end
 
@@ -28,8 +28,8 @@ module OnlyofficeBugzillaHelper
     # @param string [String] string for error
     # @return [Integer, Nil] result of bug id from url
     def bug_id_from_string(string)
-      return nil unless string.include?(@bugzilla_url)
-      string_without_bugzilla_url = string.gsub(@bugzilla_url, '')
+      return nil unless string.include?(url)
+      string_without_bugzilla_url = string.gsub(url, '')
       bug_id = string_without_bugzilla_url.gsub(/[^\d]/, '').to_i
       return nil if bug_id.zero?
       bug_id
@@ -57,7 +57,7 @@ module OnlyofficeBugzillaHelper
     # @param port [Integer] port of server
     # @return [Net::HTTPResponse] result of request
     def get_bug_result(bug_id, port)
-      Net::HTTP.start(@bugzilla_url, port, use_ssl: (port == 443)) do |http|
+      Net::HTTP.start(url, port, use_ssl: (port == 443)) do |http|
         http.get(bug_url(bug_id))
       end
     end

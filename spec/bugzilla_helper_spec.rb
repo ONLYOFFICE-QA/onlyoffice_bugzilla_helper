@@ -8,7 +8,7 @@ RSpec.describe OnlyofficeBugzillaHelper::BugzillaHelper do
   end
 
   it 'bug_id_from_string correct url' do
-    expect(bugzilla.bug_id_from_string("http://#{bugzilla.bugzilla_url}/show_bug.cgi?id=32296")).to eq(32_296)
+    expect(bugzilla.bug_id_from_string("http://#{bugzilla.url}/show_bug.cgi?id=32296")).to eq(32_296)
   end
 
   it 'bug_id_from_string without digits' do
