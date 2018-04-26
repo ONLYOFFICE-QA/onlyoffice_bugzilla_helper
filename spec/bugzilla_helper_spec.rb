@@ -11,6 +11,14 @@ RSpec.describe OnlyofficeBugzillaHelper::BugzillaHelper do
     expect(bugzilla.bug_id_from_string("http://#{bugzilla.url}/show_bug.cgi?id=32296")).to eq(32_296)
   end
 
+  it 'bug_id_from_string with string that looks like correct bugzilla bug url' do
+    expect(bugzilla.bug_id_from_string("http://#{bugzilla.url}/test?id=32296")).to be_nil
+  end
+
+  it 'bug_id_from_string with string that looks like correct bugzilla bug param' do
+    expect(bugzilla.bug_id_from_string("http://#{bugzilla.url}/show_bug.cgi?test=32296")).to be_nil
+  end
+
   it 'bug_id_from_string without digits' do
     expect(bugzilla.bug_id_from_string('test')).to be_nil
   end

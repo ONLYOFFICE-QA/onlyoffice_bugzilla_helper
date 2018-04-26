@@ -1,5 +1,7 @@
+require 'cgi'
 require 'json'
 require 'net/http'
+require 'uri'
 require 'onlyoffice_bugzilla_helper/version'
 
 # Helper for bugzilla, used in QA
@@ -12,6 +14,8 @@ module OnlyofficeBugzillaHelper
                    api_key: BugzillaHelper.read_token)
       @url = bugzilla_url
       @key = api_key
+      @show_bug_path = '/show_bug.cgi'
+      @show_bug_param = 'id'
     end
 
     # Get status of bug
@@ -28,11 +32,12 @@ module OnlyofficeBugzillaHelper
     # @param string [String] string for error
     # @return [Integer, Nil] result of bug id from url
     def bug_id_from_string(string)
-      return nil unless string.include?(url)
-      string_without_bugzilla_url = string.gsub(url, '')
-      bug_id = string_without_bugzilla_url.gsub(/[^\d]/, '').to_i
-      return nil if bug_id.zero?
-      bug_id
+      uri = URI.parse(string)
+      return nil unless uri.host == url
+      return nil unless uri.path == @show_bug_path
+      id = CGI.parse(uri.query)[@show_bug_param].first.to_i
+      return nil if id.zero?
+      id
     end
 
     # Read access token from file system
