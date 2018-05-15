@@ -1,6 +1,8 @@
 # Change log
 
 ## master (unreleased)
+
+## 0.1.1 (2018-05-15)
 * Fix getting id from string with spaces
 
 ## 0.1.0
