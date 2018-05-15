@@ -32,6 +32,7 @@ module OnlyofficeBugzillaHelper
     # @param string [String] string for error
     # @return [Integer, Nil] result of bug id from url
     def bug_id_from_string(string)
+      return nil unless string =~ URI::DEFAULT_PARSER.make_regexp
       uri = URI.parse(string)
       return nil unless uri.host == url
       return nil unless uri.path == @show_bug_path
