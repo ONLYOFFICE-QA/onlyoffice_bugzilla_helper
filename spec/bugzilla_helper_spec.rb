@@ -23,6 +23,10 @@ RSpec.describe OnlyofficeBugzillaHelper::BugzillaHelper do
     expect(bugzilla.bug_id_from_string('test')).to be_nil
   end
 
+  it 'bug_id_from_string with spaces' do
+    expect(bugzilla.bug_id_from_string('test test')).to be_nil
+  end
+
   it 'bug_id_from_string with digits but another url' do
     expect(bugzilla.bug_id_from_string('http://bugzserver/show_bug.cgi?id=31427')).to be_nil
   end
