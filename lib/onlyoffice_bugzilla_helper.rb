@@ -20,16 +20,6 @@ module OnlyofficeBugzillaHelper
       @show_bug_param = 'id'
     end
 
-    # Get status of bug
-    # @param bug_id [String, Integer] id of bug
-    # @return [String] status of bug
-    def bug_status(bug_id)
-      res = get_bug_result(bug_id, 80)
-      res = get_bug_result(bug_id, 443) if response_redirect?(res)
-      parsed_json = JSON.parse(res.body)
-      parsed_json['bugs'].first['status']
-    end
-
     # Get bug id from url
     # @param string [String] string for error
     # @return [Integer, Nil] result of bug id from url
