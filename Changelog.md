@@ -1,6 +1,8 @@
 # Change log
 
 ## master (unreleased)
+
+## 0.2.0 (2018-05-15)
 ### New features
 * New method `BugzillaHelper#bug_exists?`
 * Extract  `BugzillaHelper#bug_data` to separate method
