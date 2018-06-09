@@ -2,12 +2,14 @@ require 'cgi'
 require 'json'
 require 'net/http'
 require 'uri'
+require 'onlyoffice_bugzilla_helper/bug_data'
 require 'onlyoffice_bugzilla_helper/version'
 
 # Helper for bugzilla, used in QA
 module OnlyofficeBugzillaHelper
   # Class to check bugzilla via http
   class BugzillaHelper
+    include BugData
     attr_reader :url
 
     def initialize(bugzilla_url: 'bugzilla.onlyoffice.com',
