@@ -8,15 +8,18 @@ RSpec.describe OnlyofficeBugzillaHelper::BugzillaHelper do
   end
 
   it 'bug_id_from_string correct url' do
-    expect(bugzilla.bug_id_from_string("http://#{bugzilla.url}/show_bug.cgi?id=32296")).to eq(32_296)
+    string = "http://#{bugzilla.url}/show_bug.cgi?id=32296"
+    expect(bugzilla.bug_id_from_string(string)).to eq(32_296)
   end
 
-  it 'bug_id_from_string with string that looks like correct bugzilla bug url' do
-    expect(bugzilla.bug_id_from_string("http://#{bugzilla.url}/test?id=32296")).to be_nil
+  it 'bug_id_from_string that looks like correct bugzilla bug url' do
+    string = "http://#{bugzilla.url}/test?id=32296"
+    expect(bugzilla.bug_id_from_string(string)).to be_nil
   end
 
-  it 'bug_id_from_string with string that looks like correct bugzilla bug param' do
-    expect(bugzilla.bug_id_from_string("http://#{bugzilla.url}/show_bug.cgi?test=32296")).to be_nil
+  it 'bug_id_from_string that looks like correct bugzilla bug param' do
+    string = "http://#{bugzilla.url}/show_bug.cgi?test=32296"
+    expect(bugzilla.bug_id_from_string(string)).to be_nil
   end
 
   it 'bug_id_from_string without digits' do
@@ -28,6 +31,7 @@ RSpec.describe OnlyofficeBugzillaHelper::BugzillaHelper do
   end
 
   it 'bug_id_from_string with digits but another url' do
-    expect(bugzilla.bug_id_from_string('http://bugzserver/show_bug.cgi?id=31427')).to be_nil
+    string = 'http://bugzserver/show_bug.cgi?id=31427'
+    expect(bugzilla.bug_id_from_string(string)).to be_nil
   end
 end

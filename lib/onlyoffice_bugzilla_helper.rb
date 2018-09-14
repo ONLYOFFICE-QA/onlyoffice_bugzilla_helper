@@ -25,11 +25,14 @@ module OnlyofficeBugzillaHelper
     # @return [Integer, Nil] result of bug id from url
     def bug_id_from_string(string)
       return nil unless string =~ URI::DEFAULT_PARSER.make_regexp
+
       uri = URI.parse(string)
       return nil unless uri.host == url
       return nil unless uri.path == @show_bug_path
+
       id = CGI.parse(uri.query)[@show_bug_param].first.to_i
       return nil if id.zero?
+
       id
     end
 
@@ -37,10 +40,12 @@ module OnlyofficeBugzillaHelper
     # @return [String] token
     def self.read_token
       return ENV['BUGZILLA_API_KEY'] if ENV['BUGZILLA_API_KEY']
+
       File.read(Dir.home + '/.bugzilla/api_key').delete("\n")
     rescue Errno::ENOENT
-      raise Errno::ENOENT, "No access token found in #{Dir.home}/.bugzilla/api_key" \
-      "Please create files #{Dir.home}/.bugzilla/api_key"
+      raise Errno::ENOENT,
+            "No access token found in #{Dir.home}/.bugzilla/api_key" \
+            "Please create files #{Dir.home}/.bugzilla/api_key"
     end
 
     private
