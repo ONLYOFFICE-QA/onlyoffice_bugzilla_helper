@@ -18,8 +18,3 @@ RSpec/FilePath:
   Exclude:
     - 'spec/bug_data_spec.rb'
     - 'spec/bugzilla_helper_spec.rb'
-
-# Offense count: 1
-# Configuration parameters: AggregateFailuresByDefault.
-RSpec/MultipleExpectations:
-  Max: 2
