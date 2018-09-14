@@ -4,11 +4,11 @@ RSpec.describe OnlyofficeBugzillaHelper::BugzillaHelper do
   let(:bugzilla) { described_class.new }
 
   it 'BugzillaHelper#bug_exists? correct for existing bug' do
-    expect(bugzilla.bug_exists?(123_45)).to be_truthy
+    expect(bugzilla).to be_bug_exists(123_45)
   end
 
   it 'BugzillaHelper#bug_exists? correct for nonexisting bug' do
-    expect(bugzilla.bug_exists?(123_457_891_011)).to be_falsey
+    expect(bugzilla).not_to be_bug_exists(123_457_891_011)
   end
 
   it 'BugzillaHelper#bug_data has some data' do

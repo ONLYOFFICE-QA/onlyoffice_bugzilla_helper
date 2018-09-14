@@ -23,11 +23,3 @@ RSpec/FilePath:
 # Configuration parameters: AggregateFailuresByDefault.
 RSpec/MultipleExpectations:
   Max: 2
-
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: Strict, EnforcedStyle.
-# SupportedStyles: inflected, explicit
-RSpec/PredicateMatcher:
-  Exclude:
-    - 'spec/bug_data_spec.rb'
