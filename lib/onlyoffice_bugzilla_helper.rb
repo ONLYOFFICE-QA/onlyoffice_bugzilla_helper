@@ -43,8 +43,9 @@ module OnlyofficeBugzillaHelper
 
       File.read(Dir.home + '/.bugzilla/api_key').delete("\n")
     rescue Errno::ENOENT
-      raise Errno::ENOENT, "No access token found in #{Dir.home}/.bugzilla/api_key" \
-      "Please create files #{Dir.home}/.bugzilla/api_key"
+      raise Errno::ENOENT,
+            "No access token found in #{Dir.home}/.bugzilla/api_key" \
+            "Please create files #{Dir.home}/.bugzilla/api_key"
     end
 
     private
