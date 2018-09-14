@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe OnlyofficeBugzillaHelper::BugzillaHelper do
-  let(:bugzilla) { OnlyofficeBugzillaHelper::BugzillaHelper.new }
+  let(:bugzilla) { described_class.new }
 
   it 'BugzillaHelper#bug_exists? correct for existing bug' do
     expect(bugzilla.bug_exists?(123_45)).to be_truthy

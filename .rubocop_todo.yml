@@ -13,15 +13,6 @@ Metrics/BlockLength:
   Max: 26
 
 # Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: SkipBlocks, EnforcedStyle.
-# SupportedStyles: described_class, explicit
-RSpec/DescribedClass:
-  Exclude:
-    - 'spec/bug_data_spec.rb'
-    - 'spec/bugzilla_helper_spec.rb'
-
-# Offense count: 2
 # Configuration parameters: CustomTransform, IgnoreMethods.
 RSpec/FilePath:
   Exclude:
