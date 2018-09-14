@@ -11,10 +11,3 @@
 # ExcludedMethods: refine
 Metrics/BlockLength:
   Max: 26
-
-# Offense count: 2
-# Configuration parameters: CustomTransform, IgnoreMethods.
-RSpec/FilePath:
-  Exclude:
-    - 'spec/bug_data_spec.rb'
-    - 'spec/bugzilla_helper_spec.rb'
