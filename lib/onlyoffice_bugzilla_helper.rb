@@ -4,6 +4,7 @@ require 'net/http'
 require 'uri'
 require 'onlyoffice_bugzilla_helper/bug_data'
 require 'onlyoffice_bugzilla_helper/networking'
+require 'onlyoffice_bugzilla_helper/update_bug'
 require 'onlyoffice_bugzilla_helper/version'
 
 # Helper for bugzilla, used in QA
@@ -12,6 +13,7 @@ module OnlyofficeBugzillaHelper
   class BugzillaHelper
     include BugData
     include Networking
+    include UpdateBug
     attr_reader :url
 
     def initialize(bugzilla_url: 'https://bugzilla.onlyoffice.com',

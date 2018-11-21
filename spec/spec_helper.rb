@@ -19,3 +19,6 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 end
+
+# @return [Integer] bug id to test change status
+BUG_ID_TEST_STATUS = 39_463

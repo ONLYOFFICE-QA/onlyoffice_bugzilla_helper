@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+### New features
+
+* Ability to change bug status
+
 ### Refactoring
 
 * Deprecate auto-detect port. Since now full `bugzilla_url` with scheme is required.
