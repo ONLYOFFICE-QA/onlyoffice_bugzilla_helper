@@ -5,8 +5,7 @@ module OnlyofficeBugzillaHelper
     # @param bug_id [String, Integer] id of bug
     # @return [JSON] data
     def bug_data(bug_id)
-      res = get_bug_result(bug_id, 80)
-      res = get_bug_result(bug_id, 443) if response_redirect?(res)
+      res = get_bug_result(bug_id)
       JSON.parse(res.body)['bugs'].first
     end
 
