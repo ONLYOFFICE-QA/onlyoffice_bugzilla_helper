@@ -3,6 +3,7 @@ require 'json'
 require 'net/http'
 require 'uri'
 require 'onlyoffice_bugzilla_helper/bug_data'
+require 'onlyoffice_bugzilla_helper/networking'
 require 'onlyoffice_bugzilla_helper/version'
 
 # Helper for bugzilla, used in QA
@@ -10,11 +11,12 @@ module OnlyofficeBugzillaHelper
   # Class to check bugzilla via http
   class BugzillaHelper
     include BugData
+    include Networking
     attr_reader :url
 
-    def initialize(bugzilla_url: 'bugzilla.onlyoffice.com',
+    def initialize(bugzilla_url: 'https://bugzilla.onlyoffice.com',
                    api_key: BugzillaHelper.read_token)
-      @url = bugzilla_url
+      @uri = URI.parse(bugzilla_url)
       @key = api_key
       @show_bug_path = '/show_bug.cgi'
       @show_bug_param = 'id'
@@ -57,18 +59,11 @@ module OnlyofficeBugzillaHelper
     end
 
     # @param bug_id [Integer] id of bug
-    # @param port [Integer] port of server
     # @return [Net::HTTPResponse] result of request
-    def get_bug_result(bug_id, port)
-      Net::HTTP.start(url, port, use_ssl: (port == 443)) do |http|
+    def get_bug_result(bug_id)
+      Net::HTTP.start(@uri.host, @uri.port, use_ssl: use_ssl?) do |http|
         http.get(bug_url(bug_id))
       end
-    end
-
-    # @param response [Net::HTTPResponse] to check
-    # @return [Boolean] is response - redirect
-    def response_redirect?(response)
-      response.header['location']
     end
   end
 end
