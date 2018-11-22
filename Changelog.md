@@ -6,6 +6,7 @@
 
 * Ability to change bug status
 * Ability to get comments
+* Ability to add comments
 
 ### Refactoring
 

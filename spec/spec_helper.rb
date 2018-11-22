@@ -6,6 +6,7 @@ if ENV['CI'] == 'true'
 end
 
 require 'bundler/setup'
+require 'faker'
 require 'onlyoffice_bugzilla_helper'
 
 RSpec.configure do |config|
