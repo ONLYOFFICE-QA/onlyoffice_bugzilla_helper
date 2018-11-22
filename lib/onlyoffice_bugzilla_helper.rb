@@ -3,6 +3,7 @@ require 'json'
 require 'net/http'
 require 'uri'
 require 'onlyoffice_bugzilla_helper/bug_data'
+require 'onlyoffice_bugzilla_helper/comments'
 require 'onlyoffice_bugzilla_helper/networking'
 require 'onlyoffice_bugzilla_helper/update_bug'
 require 'onlyoffice_bugzilla_helper/version'
@@ -12,6 +13,7 @@ module OnlyofficeBugzillaHelper
   # Class to check bugzilla via http
   class BugzillaHelper
     include BugData
+    include Comments
     include Networking
     include UpdateBug
     attr_reader :url
@@ -56,8 +58,8 @@ module OnlyofficeBugzillaHelper
 
     # @param id [Integer] id of bug
     # @return [String] url of bug on server with api key
-    def bug_url(id)
-      "/rest/bug/#{id}?api_key=#{@key}"
+    def bug_url(id, suffix = '')
+      "/rest/bug/#{id}#{suffix}?api_key=#{@key}"
     end
 
     # @param bug_id [Integer] id of bug
