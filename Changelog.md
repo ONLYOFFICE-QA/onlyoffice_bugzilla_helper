@@ -5,6 +5,7 @@
 ### New features
 
 * Ability to change bug status
+* Ability to get comments
 
 ### Refactoring
 
