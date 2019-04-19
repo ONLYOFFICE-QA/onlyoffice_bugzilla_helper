@@ -3,7 +3,7 @@ module OnlyofficeBugzillaHelper
   module Comments
     # @return [Hash] list of bug comments
     def comments(bug_id)
-      res = Net::HTTP.start(@uri.host, @uri.port, use_ssl: use_ssl?) do |http|
+      res = Net::HTTP.start(@url.host, @url.port, use_ssl: use_ssl?) do |http|
         http.get(bug_url(bug_id, '/comment'))
       end
       JSON.parse(res.body)['bugs'][bug_id.to_s]['comments']
@@ -16,7 +16,7 @@ module OnlyofficeBugzillaHelper
       req = Net::HTTP::Post.new(bug_url(bug_id, '/comment'))
       req.body = { comment: comment }.to_json
       req.add_field('Content-Type', 'text/plain')
-      connection = Net::HTTP.new(@uri.host, @uri.port)
+      connection = Net::HTTP.new(@url.host, @url.port)
       connection.use_ssl = use_ssl?
       connection.start { |http| http.request(req) }
     end

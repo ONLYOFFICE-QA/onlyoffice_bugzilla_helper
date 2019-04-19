@@ -5,7 +5,7 @@ module OnlyofficeBugzillaHelper
 
     # @return [True, False] is ssl shold be used
     def use_ssl?
-      @uri.scheme == 'https'
+      @url.scheme == 'https'
     end
   end
 end
