@@ -7,6 +7,7 @@
 * Ability to change bug status
 * Ability to get comments
 * Ability to add comments
+* Store all develop dependencies in Gemfile
 
 ### Refactoring
 
