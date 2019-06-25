@@ -22,25 +22,3 @@ RSpec/ExampleLength:
 # Configuration parameters: AggregateFailuresByDefault.
 RSpec/MultipleExpectations:
   Max: 4
-
-# Offense count: 15
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: always, never
-Style/FrozenStringLiteralComment:
-  Exclude:
-    - 'Gemfile'
-    - 'Rakefile'
-    - 'lib/onlyoffice_bugzilla_helper.rb'
-    - 'lib/onlyoffice_bugzilla_helper/bug_data.rb'
-    - 'lib/onlyoffice_bugzilla_helper/comments.rb'
-    - 'lib/onlyoffice_bugzilla_helper/networking.rb'
-    - 'lib/onlyoffice_bugzilla_helper/update_bug.rb'
-    - 'lib/onlyoffice_bugzilla_helper/version.rb'
-    - 'onlyoffice_bugzilla_helper.gemspec'
-    - 'spec/onlyoffice_bugzilla_helper/bugzilla_helper_bug_data_spec.rb'
-    - 'spec/onlyoffice_bugzilla_helper/bugzilla_helper_comments_spec.rb'
-    - 'spec/onlyoffice_bugzilla_helper/bugzilla_helper_spec.rb'
-    - 'spec/onlyoffice_bugzilla_helper/bugzilla_helper_update_bug_spec.rb'
-    - 'spec/onlyoffice_bugzilla_helper/onlyoffice_bugzilla_helper_spec.rb'
-    - 'spec/spec_helper.rb'

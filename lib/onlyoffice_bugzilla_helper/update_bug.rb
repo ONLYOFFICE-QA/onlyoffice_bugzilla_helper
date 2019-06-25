@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module OnlyofficeBugzillaHelper
   # Method to updating bug data
   module UpdateBug
