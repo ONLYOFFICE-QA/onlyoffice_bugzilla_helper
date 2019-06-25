@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module OnlyofficeBugzillaHelper
   # Method to work with bug data
   module BugData

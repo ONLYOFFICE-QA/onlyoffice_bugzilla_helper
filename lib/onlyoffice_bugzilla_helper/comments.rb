@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module OnlyofficeBugzillaHelper
   # Working with comments
   module Comments

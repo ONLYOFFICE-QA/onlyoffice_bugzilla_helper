@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module OnlyofficeBugzillaHelper
   # Code for networking
   module Networking
