@@ -9,7 +9,7 @@ RSpec.describe OnlyofficeBugzillaHelper::BugzillaHelper, '#comments' do
   end
 
   it 'Add comment to bug' do
-    comment = Faker::StarWars.quote
+    comment = Faker::Movies::StarWars.quote
     bugzilla.add_comment(BUG_ID_TEST_STATUS, comment)
     comments = bugzilla.comments(BUG_ID_TEST_STATUS)
     expect(comments.last['text']).to eq(comment)
