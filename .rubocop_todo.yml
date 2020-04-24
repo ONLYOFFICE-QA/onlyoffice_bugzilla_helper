@@ -11,9 +11,3 @@
 # ExcludedMethods: refine
 Metrics/BlockLength:
   Max: 29
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Performance/RegexpMatch:
-  Exclude:
-    - 'lib/onlyoffice_bugzilla_helper.rb'
