@@ -12,11 +12,11 @@ Gem::Specification.new do |s|
   s.description = 'Helper for bugzilla, used in QA'
   s.homepage = "https://github.com/onlyoffice-testing-robot/#{s.name}"
   s.metadata = {
-      'bug_tracker_uri' => "#{s.homepage}/issues",
-      'changelog_uri' => "#{s.homepage}/blob/master/CHANGELOG.md",
-      'documentation_uri' => "https://www.rubydoc.info/gems/#{s.name}",
-      'homepage_uri' => s.homepage,
-      'source_code_uri' => s.homepage
+    'bug_tracker_uri' => "#{s.homepage}/issues",
+    'changelog_uri' => "#{s.homepage}/blob/master/CHANGELOG.md",
+    'documentation_uri' => "https://www.rubydoc.info/gems/#{s.name}",
+    'homepage_uri' => s.homepage,
+    'source_code_uri' => s.homepage
   }
   s.email = ['shockwavenn@gmail.com']
   s.files = Dir['lib/**/*']
