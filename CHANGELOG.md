@@ -2,6 +2,12 @@
 
 ## master (unreleased)
 
+## 0.3.1 (2020-04-29)
+
+### Fixes
+
+* Fix incorrect gem name
+
 ## 0.3.0 (2020-04-29)
 
 ### New features
