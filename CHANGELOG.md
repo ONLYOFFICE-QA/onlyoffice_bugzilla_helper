@@ -9,9 +9,10 @@
 * Ability to add comments
 * Store all develop dependencies in Gemfile
 
-### Refactoring
+### Changes
 
 * Deprecate auto-detect port. Since now full `bugzilla_url` with scheme is required.
+* Cleanup gemspec file
 
 ## 0.2.0 (2018-05-15)
 ### New features
