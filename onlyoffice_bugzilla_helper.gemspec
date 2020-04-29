@@ -1,22 +1,25 @@
 # frozen_string_literal: true
 
-lib = File.expand_path('lib', __dir__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'onlyoffice_bugzilla_helper/version'
+require_relative 'lib/onlyoffice_bugzilla_helper/name'
+require_relative 'lib/onlyoffice_bugzilla_helper/version'
 
-Gem::Specification.new do |spec|
-  spec.name          = 'onlyoffice_bugzilla_helper'
-  spec.version       = OnlyofficeBugzillaHelper::VERSION
-  spec.authors       = ['Pavel Lobashov', 'ONLYOFFICE']
-  spec.email         = ['shockwavenn@gmail.com']
-
-  spec.summary       = 'Helper for bugzilla'
-  spec.description   = 'Helper for bugzilla, used in QA'
-  spec.homepage      = 'http://rubygems.org/gems/onlyoffice_bugzilla_helper'
-
-  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
-    f.match(%r{^(test|spec|features)/})
-  end
-  spec.require_paths = ['lib']
-  spec.license = 'AGPL-3.0'
+Gem::Specification.new do |s|
+  s.name = OnlyofficeBugzillaHelper::NAME
+  s.version = OnlyofficeBugzillaHelper::VERSION
+  s.platform = Gem::Platform::RUBY
+  s.authors = ['ONLYOFFICE', 'Pavel Lobashov']
+  s.summary = 'Helper for bugzilla'
+  s.description = 'Helper for bugzilla, used in QA'
+  s.homepage = "https://github.com/onlyoffice-testing-robot/#{s.name}"
+  s.metadata = {
+    'bug_tracker_uri' => "#{s.homepage}/issues",
+    'changelog_uri' => "#{s.homepage}/blob/master/CHANGELOG.md",
+    'documentation_uri' => "https://www.rubydoc.info/gems/#{s.name}",
+    'homepage_uri' => s.homepage,
+    'source_code_uri' => s.homepage
+  }
+  s.email = ['shockwavenn@gmail.com']
+  s.files = Dir['lib/**/*']
+  s.add_development_dependency('rake', '~> 13.0')
+  s.license = 'AGPL-3.0'
 end
