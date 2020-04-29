@@ -13,6 +13,8 @@
 
 * Deprecate auto-detect port. Since now full `bugzilla_url` with scheme is required.
 * Cleanup gemspec file
+* Use actual ruby in travis test
+* Minor cleanup of travis config
 
 ## 0.2.0 (2018-05-15)
 ### New features
