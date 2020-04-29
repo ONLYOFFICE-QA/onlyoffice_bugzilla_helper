@@ -9,6 +9,7 @@
 * Ability to add comments
 * Store all develop dependencies in Gemfile
 * `mardkownlint` support in travis
+* Add task to release gem on github
 
 ### Changes
 
