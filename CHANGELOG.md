@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+## 0.3.2 (2020-04-29)
+
+* Fix forgotten version bump
+
 ## 0.3.1 (2020-04-29)
 
 ### Fixes
