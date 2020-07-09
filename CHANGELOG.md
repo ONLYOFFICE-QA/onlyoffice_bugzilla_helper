@@ -10,6 +10,7 @@
 * Use `GitHub Actions` instead of Travis CI
 * Add `rubocop` check to GitHub Actions
 * Add `rubocop-rake` support
+* Add `markdownlint` checks in GitHub Actions
 
 ### Fixes
 
