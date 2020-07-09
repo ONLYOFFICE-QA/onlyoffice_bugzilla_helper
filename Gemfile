@@ -8,9 +8,9 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 gemspec
 
 group :test do
-  gem 'codecov', require: false
   gem 'faker'
   gem 'rspec'
+  gem 'simplecov', require: false
 end
 
 group :development do
