@@ -45,11 +45,14 @@ module OnlyofficeBugzillaHelper
     end
 
     # Read access token from file system
+    # @param force_file_read [True, False] force read api key from file
+    # @param token_path [String] path to file with API Token
     # @return [String] token
-    def self.read_token
-      return ENV['BUGZILLA_API_KEY'] if ENV['BUGZILLA_API_KEY']
+    def self.read_token(force_file_read: false,
+                        token_path: Dir.home + '/.bugzilla/api_key')
+      return ENV['BUGZILLA_API_KEY'] if ENV['BUGZILLA_API_KEY'] && !force_file_read
 
-      File.read(Dir.home + '/.bugzilla/api_key').delete("\n")
+      File.read(token_path).delete("\n")
     rescue Errno::ENOENT
       raise Errno::ENOENT,
             "No access token found in #{Dir.home}/.bugzilla/api_key" \
