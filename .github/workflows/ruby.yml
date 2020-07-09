@@ -10,6 +10,8 @@ jobs:
       with:
         ruby-version: 2.7
     - name: Build and test with Rake
+      with:
+        BUGZILLA_API_KEY: ${{ secrets.BUGZILLA_API_KEY }}
       run: |
         gem install bundler
         bundle install --jobs 4 --retry 3
