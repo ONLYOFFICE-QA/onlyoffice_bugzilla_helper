@@ -24,7 +24,7 @@ module OnlyofficeBugzillaHelper
     def bug_exists?(bug_id)
       bug_status(bug_id)
       true
-    rescue JSON::ParserError
+    rescue JSON::ParserError, NoMethodError
       false
     end
   end
