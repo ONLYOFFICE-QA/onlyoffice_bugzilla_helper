@@ -2,6 +2,11 @@
 
 ## master (unreleased)
 
+### New Feature
+
+* Add test to check `BugzillaHelper.token_read`
+* Add options to `BugzillaHelper.token_read`
+
 ### Fixes
 
 * Fix `BugzillaHelper#bug_exists?` after removing Testopia
