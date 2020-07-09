@@ -10,7 +10,7 @@ jobs:
       with:
         ruby-version: 2.7
     - name: Build and test with Rake
-      with:
+      env:
         BUGZILLA_API_KEY: ${{ secrets.BUGZILLA_API_KEY }}
       run: |
         gem install bundler
