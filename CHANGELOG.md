@@ -11,6 +11,9 @@
 * Add `rubocop` check to GitHub Actions
 * Add `rubocop-rake` support
 * Add `markdownlint` checks in GitHub Actions
+* Add missing documentation
+* Check for documentation coverage in GitHub Actions
+* Add `yard` as development dependency
 
 ### Fixes
 
