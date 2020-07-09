@@ -6,6 +6,8 @@
 
 * Add test to check `BugzillaHelper.token_read`
 * Add options to `BugzillaHelper.token_read`
+* Remove support of `codecov`
+* Use `GitHub Actions` instead of Travis CI
 
 ### Fixes
 
