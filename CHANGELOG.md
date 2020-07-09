@@ -8,10 +8,17 @@
 * Add options to `BugzillaHelper.token_read`
 * Remove support of `codecov`
 * Use `GitHub Actions` instead of Travis CI
+* Add `rubocop` check to GitHub Actions
+* Add `rubocop-rake` support
 
 ### Fixes
 
 * Fix `BugzillaHelper#bug_exists?` after removing Testopia
+
+### Changes
+
+* Move `rubocop` dependencies in Gemfile
+* Store specific version of `rubocop` dependencies
 
 ## 0.3.2 (2020-04-29)
 
