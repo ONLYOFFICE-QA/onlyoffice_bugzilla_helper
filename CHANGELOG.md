@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+### Fixes
+
+* Fix `BugzillaHelper#bug_exists?` after removing Testopia
+
 ## 0.3.2 (2020-04-29)
 
 * Fix forgotten version bump
