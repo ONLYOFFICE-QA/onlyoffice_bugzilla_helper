@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.files = Dir['lib/**/*']
   s.add_development_dependency('rake', '~> 13.0')
   s.add_development_dependency('rubocop', '0.88.0')
-  s.add_development_dependency('rubocop-performance', '1.7.0')
+  s.add_development_dependency('rubocop-performance', '1.7.1')
   s.add_development_dependency('rubocop-rake', '0.5.1')
   s.add_development_dependency('rubocop-rspec', '1.42.0')
   s.license = 'AGPL-3.0'
