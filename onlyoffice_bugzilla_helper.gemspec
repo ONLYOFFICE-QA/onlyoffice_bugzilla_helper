@@ -7,6 +7,7 @@ Gem::Specification.new do |s|
   s.name = OnlyofficeBugzillaHelper::NAME
   s.version = OnlyofficeBugzillaHelper::VERSION
   s.platform = Gem::Platform::RUBY
+  s.required_ruby_version = '>= 2.4'
   s.authors = ['ONLYOFFICE', 'Pavel Lobashov']
   s.summary = 'Helper for bugzilla'
   s.description = 'Helper for bugzilla, used in QA'
@@ -21,7 +22,7 @@ Gem::Specification.new do |s|
   s.email = ['shockwavenn@gmail.com']
   s.files = Dir['lib/**/*']
   s.add_development_dependency('rake', '~> 13.0')
-  s.add_development_dependency('rubocop', '0.88.0')
+  s.add_development_dependency('rubocop', '0.89.0')
   s.add_development_dependency('rubocop-performance', '1.7.1')
   s.add_development_dependency('rubocop-rake', '0.5.1')
   s.add_development_dependency('rubocop-rspec', '1.42.0')

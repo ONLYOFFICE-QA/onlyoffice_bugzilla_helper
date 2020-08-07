@@ -49,7 +49,7 @@ module OnlyofficeBugzillaHelper
     # @param token_path [String] path to file with API Token
     # @return [String] token
     def self.read_token(force_file_read: false,
-                        token_path: Dir.home + '/.bugzilla/api_key')
+                        token_path: "#{Dir.home}/.bugzilla/api_key")
       return ENV['BUGZILLA_API_KEY'] if ENV['BUGZILLA_API_KEY'] && !force_file_read
 
       File.read(token_path).delete("\n")
