@@ -2,6 +2,11 @@
 
 ## master (unreleased)
 
+### Changes
+
+* Require ruby v2.4 or newer
+* Fix new warnings from `rubocop` v0.89.0 update
+
 ## 0.4.0 (2020-07-09)
 
 ### New Feature
