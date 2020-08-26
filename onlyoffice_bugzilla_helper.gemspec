@@ -25,6 +25,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency('rubocop', '0.89.1')
   s.add_development_dependency('rubocop-performance', '1.7.1')
   s.add_development_dependency('rubocop-rake', '0.5.1')
-  s.add_development_dependency('rubocop-rspec', '1.43.1')
+  s.add_development_dependency('rubocop-rspec', '1.43.2')
   s.license = 'AGPL-3.0'
 end
