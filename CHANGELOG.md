@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+### New Features
+
+* Add `dependabot` config
+
 ### Changes
 
 * Require ruby v2.4 or newer
