@@ -6,7 +6,7 @@
 
 * Add logging support
 
-### 0.5.0 (2020-12-18)
+## 0.5.0 (2020-12-18)
 
 ### New Features
 
