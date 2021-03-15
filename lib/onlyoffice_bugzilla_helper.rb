@@ -6,6 +6,7 @@ require 'net/http'
 require 'uri'
 require 'onlyoffice_bugzilla_helper/bug_data'
 require 'onlyoffice_bugzilla_helper/comments'
+require 'onlyoffice_bugzilla_helper/logger_wrapper'
 require 'onlyoffice_bugzilla_helper/networking'
 require 'onlyoffice_bugzilla_helper/update_bug'
 require 'onlyoffice_bugzilla_helper/version'
@@ -16,6 +17,7 @@ module OnlyofficeBugzillaHelper
   class BugzillaHelper
     include BugData
     include Comments
+    include LoggerWrapper
     include Networking
     include UpdateBug
     attr_reader :url
@@ -70,9 +72,8 @@ module OnlyofficeBugzillaHelper
     # @param bug_id [Integer] id of bug
     # @return [Net::HTTPResponse] result of request
     def get_bug_result(bug_id)
-      Net::HTTP.start(@url.host, @url.port, use_ssl: use_ssl?) do |http|
-        http.get(bug_url(bug_id))
-      end
+      req = Net::HTTP::Get.new(bug_url(bug_id))
+      perform_request(req)
     end
   end
 end
