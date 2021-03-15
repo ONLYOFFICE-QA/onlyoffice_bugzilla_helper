@@ -2,6 +2,8 @@
 
 ## master (unreleased)
 
+## 0.6.0 (2021-03-15)
+
 ### New Features
 
 * Add logging support
