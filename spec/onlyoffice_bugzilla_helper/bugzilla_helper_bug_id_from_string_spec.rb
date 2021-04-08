@@ -11,6 +11,11 @@ RSpec.describe OnlyofficeBugzillaHelper::BugzillaHelper,
     expect(bugzilla.bug_id_from_string(string)).to eq(32_296)
   end
 
+  it 'bug_id_from_string that contains correct url but contains extra data' do
+    string = "Junk string #{bugzilla.url}/test?id=32296"
+    expect(bugzilla.bug_id_from_string(string)).to be_nil
+  end
+
   it 'bug_id_from_string that looks like correct bugzilla bug url' do
     string = "#{bugzilla.url}/test?id=32296"
     expect(bugzilla.bug_id_from_string(string)).to be_nil
