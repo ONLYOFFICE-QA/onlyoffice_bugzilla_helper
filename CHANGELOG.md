@@ -2,6 +2,12 @@
 
 ## master (unreleased)
 
+## 0.6.1 (2021-04-08)
+
+### Fixes
+
+* Fix `BugzillaHelper#bug_id_from_string` failure for string containing url
+
 ## 0.6.0 (2021-03-15)
 
 ### New Features
