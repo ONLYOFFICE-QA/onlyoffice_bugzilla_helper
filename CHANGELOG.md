@@ -5,6 +5,7 @@
 ### Changes
 
 * Drop support of ruby 2.4 since it's EOLed
+* Require `mfa` for releasing gem
 
 ## 0.6.1 (2021-04-08)
 
