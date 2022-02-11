@@ -2,6 +2,10 @@
 
 ## master (unreleased)
 
+### Fixes
+
+* Fix `markdownlint` failure because of old `nodejs` in CI
+
 ### Changes
 
 * Drop support of ruby 2.4 since it's EOLed
