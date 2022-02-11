@@ -15,6 +15,7 @@
 * Drop support of ruby 2.4 since it's EOLed
 * Require `mfa` for releasing gem
 * Remove `codeclimate` config, since we don't use it any more
+* Check `dependabot` at 8:00 Moscow time daily
 
 ## 0.6.1 (2021-04-08)
 
