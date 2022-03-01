@@ -16,6 +16,7 @@
 * Require `mfa` for releasing gem
 * Remove `codeclimate` config, since we don't use it any more
 * Check `dependabot` at 8:00 Moscow time daily
+* Changes from `rubocop-rspec` update to 2.9.0
 
 ## 0.6.1 (2021-04-08)
 
