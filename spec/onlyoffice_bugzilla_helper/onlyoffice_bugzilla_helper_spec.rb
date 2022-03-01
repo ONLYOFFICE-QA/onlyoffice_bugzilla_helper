@@ -2,6 +2,6 @@
 
 RSpec.describe OnlyofficeBugzillaHelper do
   it 'has a version number' do
-    expect(OnlyofficeBugzillaHelper::VERSION).not_to be nil
+    expect(OnlyofficeBugzillaHelper::VERSION).not_to be_nil
   end
 end
