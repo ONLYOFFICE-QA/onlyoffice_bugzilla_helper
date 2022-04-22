@@ -52,7 +52,9 @@ module OnlyofficeBugzillaHelper
     # @return [String] token
     def self.read_token(force_file_read: false,
                         token_path: "#{Dir.home}/.bugzilla/api_key")
-      return ENV['BUGZILLA_API_KEY'] if ENV['BUGZILLA_API_KEY'] && !force_file_read
+      # rubocop:disable Style/FetchEnvVar
+      return ENV['BUGZILLA_API_KEY'] if ENV.key?('BUGZILLA_API_KEY') && !force_file_read
+      # rubocop:enable Style/FetchEnvVar
 
       File.read(token_path).delete("\n")
     rescue Errno::ENOENT
