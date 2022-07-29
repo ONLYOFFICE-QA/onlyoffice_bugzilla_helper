@@ -15,10 +15,10 @@ module OnlyofficeBugzillaHelper
     # @param [Net:HTTP] response in result
     # @return [nil]
     def log_request(request, response)
-      logger.info('Made request. '\
-                  "Type: #{request.method}. "\
-                  "Path: #{hide_keys(request.path)}. "\
-                  "Body: #{hide_keys(request.body)}. "\
+      logger.info('Made request. ' \
+                  "Type: #{request.method}. " \
+                  "Path: #{hide_keys(request.path)}. " \
+                  "Body: #{hide_keys(request.body)}. " \
                   "Response: #{hide_keys(response.body)}")
     end
 
