@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.name = OnlyofficeBugzillaHelper::NAME
   s.version = OnlyofficeBugzillaHelper::VERSION
   s.platform = Gem::Platform::RUBY
-  s.required_ruby_version = '>= 2.5'
+  s.required_ruby_version = '>= 2.6'
   s.authors = ['ONLYOFFICE', 'Pavel Lobashov']
   s.summary = 'Helper for bugzilla'
   s.description = 'Helper for bugzilla, used in QA'
