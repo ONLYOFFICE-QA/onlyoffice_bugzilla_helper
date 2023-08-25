@@ -13,7 +13,7 @@
 
 ### Changes
 
-* Drop support of `ruby-2.4` and `ruby-2.5` since it's EOLed
+* Drop support of `ruby-2.4`, `ruby-2.5`, `ruby-2.6`, `ruby-2.7` since it's EOLed
 * Require `mfa` for releasing gem
 * Remove `codeclimate` config, since we don't use it any more
 * Check `dependabot` at 8:00 Moscow time daily
