@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   }
   s.email = ['shockwavenn@gmail.com']
   s.files = Dir['lib/**/*']
-  s.add_development_dependency('faker', '~> 2')
+  s.add_development_dependency('faker', '~> 3')
   s.add_development_dependency('overcommit', '~> 0')
   s.add_development_dependency('rake', '~> 13')
   s.add_development_dependency('rspec', '~> 3')
