@@ -5,6 +5,7 @@
 ### New Features
 
 * Add `yamllint` check in CI
+* Create only one connection to Bugzilla
 
 ### Fixes
 
