@@ -14,9 +14,9 @@ module OnlyofficeBugzillaHelper
     # @param [Net:HTTP] request to make
     # @return [Net:HTTPResponse] result of request
     def perform_request(request)
-      connection = Net::HTTP.new(@url.host, @url.port)
-      connection.use_ssl = use_ssl?
-      result = connection.start { |http| http.request(request) }
+      @connection ||= Net::HTTP.start(@url.host, @url.port, use_ssl: use_ssl?)
+      @connection.start unless @connection.started?
+      result = @connection.request(request)
       log_request(request, result)
       result
     end
