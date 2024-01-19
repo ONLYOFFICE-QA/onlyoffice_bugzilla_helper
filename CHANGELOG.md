@@ -6,6 +6,8 @@
 
 * Add `yamllint` check in CI
 * Create only one connection to Bugzilla
+* Add `ruby-3.3` to CI
+* Extract all other rubies versions to nightly CI check
 
 ### Fixes
 
