@@ -3,6 +3,9 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    concurrency:
+      group: rspec_tests
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
       - name: Set up Ruby 3.3
