@@ -8,10 +8,10 @@ jobs:
       cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Ruby 3.3
+      - name: Set up Ruby 3.4
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.3
+          ruby-version: 3.4
       - name: Build and test with Rake
         env:
           BUGZILLA_API_KEY: ${{ secrets.BUGZILLA_API_KEY }}
