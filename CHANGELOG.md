@@ -6,7 +6,7 @@
 
 * Add `yamllint` check in CI
 * Create only one connection to Bugzilla
-* Add `ruby-3.3` to CI
+* Use `ruby-3.4` in CI
 * Extract all other rubies versions to nightly CI check
 * Add `dependabot` check for `GitHub Actions`
 
