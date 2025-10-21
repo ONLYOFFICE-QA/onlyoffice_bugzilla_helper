@@ -72,7 +72,7 @@ module OnlyofficeBugzillaHelper
     end
 
     # Get bugs by filters
-    # @param filters [Hash] filters to apply (e.g., {'status' => 'NEW', 'product' => 10, 'limit' => 10})
+    # @param filters [Hash] filters to apply (e.g., {'status' => 'NEW', 'product' => "Office" })
     # @return [Net::HTTPResponse] result of request
     def get_bugs_result(filters)
       query_params = filters.merge('api_key' => @key)
