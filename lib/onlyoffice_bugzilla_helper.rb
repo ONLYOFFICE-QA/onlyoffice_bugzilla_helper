@@ -71,6 +71,16 @@ module OnlyofficeBugzillaHelper
       "/rest/bug/#{id}#{suffix}?api_key=#{@key}"
     end
 
+    # Get bugs by filters
+    # @param filters [Hash] filters to apply (e.g., {'status' => 'NEW', 'product' => 10, 'limit' => 10})
+    # @return [Net::HTTPResponse] result of request
+    def get_bugs_result(filters)
+      query_params = filters.merge('api_key' => @key)
+      query_string = URI.encode_www_form(query_params)
+      req = Net::HTTP::Get.new("/rest/bug?#{query_string}")
+      perform_request(req)
+    end
+
     # @param bug_id [Integer] id of bug
     # @return [Net::HTTPResponse] result of request
     def get_bug_result(bug_id)

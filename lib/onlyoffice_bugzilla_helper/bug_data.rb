@@ -19,13 +19,22 @@ module OnlyofficeBugzillaHelper
       parsed_json['status']
     end
 
-    # @param bug_id [Integer] is bug exists
+    # Check if bug exists
+    # @param bug_id [Integer] id of bug
     # @return [Boolean]
     def bug_exists?(bug_id)
       bug_status(bug_id)
       true
     rescue JSON::ParserError, NoMethodError
       false
+    end
+
+    # Get list of bugs filtered by parameters
+    # @param filters [Hash] dictionary of filters (e.g., {'status' => 'NEW', 'product' => "Office" })
+    # @return [Array] list of bugs
+    def get_bugs_by_filter(filters)
+      result = get_bugs_result(filters)
+      JSON.parse(result.body).fetch('bugs', [])
     end
   end
 end
