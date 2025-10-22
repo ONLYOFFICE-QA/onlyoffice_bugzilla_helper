@@ -36,5 +36,13 @@ module OnlyofficeBugzillaHelper
       result = get_bugs_result(filters)
       JSON.parse(result.body).fetch('bugs', [])
     end
+
+    # Get history of bug
+    # @param bug_id [Integer] id of bug
+    # @return [Array] history of bug
+    def get_bug_history(bug_id)
+      result = get_bug_history_result(bug_id)
+      JSON.parse(result.body).fetch('history', [])
+    end
   end
 end

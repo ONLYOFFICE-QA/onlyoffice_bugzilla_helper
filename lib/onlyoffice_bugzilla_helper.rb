@@ -81,6 +81,11 @@ module OnlyofficeBugzillaHelper
       perform_request(req)
     end
 
+    def get_bug_history_result(bug_id)
+      req = Net::HTTP::Get.new(bug_url(bug_id, '/history'))
+      perform_request(req)
+    end
+
     # @param bug_id [Integer] id of bug
     # @return [Net::HTTPResponse] result of request
     def get_bug_result(bug_id)
