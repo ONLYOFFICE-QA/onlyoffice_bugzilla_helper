@@ -22,4 +22,19 @@ RSpec.describe OnlyofficeBugzillaHelper::BugzillaHelper, '#bug_data' do
     data = bugzilla.bug_data(123_45)
     expect(data['creator']).not_to be_empty
   end
+
+  it 'BugzillaHelper#bug_status returns status' do
+    status = bugzilla.bug_status(123_45)
+    expect(status).to be_a(String)
+  end
+
+  it 'BugzillaHelper#get_bugs_by_filter returns array' do
+    bugs = bugzilla.get_bugs_by_filter('status' => 'NEW')
+    expect(bugs).to be_a(Array)
+  end
+
+  it 'BugzillaHelper#get_bug_history returns array' do
+    history = bugzilla.get_bug_history(123_45)
+    expect(history).to be_a(Array)
+  end
 end
