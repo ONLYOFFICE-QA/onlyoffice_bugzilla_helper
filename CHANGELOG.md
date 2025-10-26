@@ -4,6 +4,8 @@
 
 ### New Features
 
+* Add `BugzillaHelper#get_bugs_by_filter` method to get bugs filtered by parameters
+* Add `BugzillaHelper#get_bug_history` method to get history of bug
 * Add `yamllint` check in CI
 * Create only one connection to Bugzilla
 * Use `ruby-3.4` in CI
