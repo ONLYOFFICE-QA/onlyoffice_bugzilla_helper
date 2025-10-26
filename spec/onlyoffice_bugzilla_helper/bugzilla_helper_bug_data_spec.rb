@@ -29,7 +29,7 @@ RSpec.describe OnlyofficeBugzillaHelper::BugzillaHelper, '#bug_data' do
   end
 
   it 'BugzillaHelper#get_bugs_by_filter returns array' do
-    bugs = bugzilla.get_bugs_by_filter('status' => 'NEW')
+    bugs = bugzilla.get_bugs_by_filter('id' => 123_45)
     expect(bugs).to be_a(Array)
   end
 
