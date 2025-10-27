@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    onlyoffice_bugzilla_helper (0.6.1)
+    onlyoffice_bugzilla_helper (0.7.0)
 
 GEM
   remote: https://rubygems.org/
@@ -101,4 +101,4 @@ DEPENDENCIES
   yard (>= 0.9.20)
 
 BUNDLED WITH
-   2.5.5
+   2.6.9

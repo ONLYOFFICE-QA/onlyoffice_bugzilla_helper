@@ -2,6 +2,8 @@
 
 ## master (unreleased)
 
+## 0.7.0 (2025-10-27)
+
 ### New Features
 
 * Add `BugzillaHelper#get_bugs_by_filter` method to get bugs filtered by parameters
